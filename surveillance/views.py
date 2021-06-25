@@ -46,6 +46,8 @@ class SurveillanceDeleteView(View):
         #レコードが存在する場合、削除する。
         if informations:
             informations.delete()
+        else:
+            print("指定されたデータがありません")
         
         return redirect("surveillance:index")
 

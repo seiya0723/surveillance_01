@@ -15,11 +15,10 @@
         <form method="POST">
             {% csrf_token %}
             <p>監視したいサイトURLを入力</p>
-            <input type="url" placeholder="sample.com" value="" name="url">
+            <input type="url" placeholder="sample.com" name="url">
             
             <p>通知先メールアドレス</p>
-            <input type="email" placeholder="sample@gmail.com" value="" name="email">
-
+            <input type="email" placeholder="sample@gmail.com" name="email">
             <input type="submit" value="登録">
         </form>
 
@@ -33,7 +32,7 @@
             -->
             <form action="{% url 'surveillance:delete' information.id %}" method="POST" style="display:inline-block;">
                 {% csrf_token %}
-                <button type="submit">削除</button>
+                <input type="submit" value="削除">
             </form>
         </div>
         {% endfor %}
